@@ -7,23 +7,22 @@
 
 	public class MainViewModel : ViewModelBase
 	{
-		private readonly NavigationService NavigationService;
+		private readonly NavigationService navigationService;
 
 		public MainViewModel()
 		{
-			NavigationService = new NavigationService();
-			NavigationService.Configure("SecondPage", typeof(Page2));
-			NavigationService.Configure("ThirdPage", typeof(Page2));
-			NavigationService.Configure("MainPage", typeof(MainPage));
+			navigationService = new NavigationService();
+			navigationService.Configure("SecondPage", typeof(Page2));
+
 		}
 		public void NavigateToPage2()
 		{
-			NavigationService.NavigateTo("SecondPage");
+			navigationService.NavigateTo("SecondPage");
 		}
 
 		public void NavigateBack()
 		{
-			NavigationService.GoBack();
+			navigationService.GoBack();
 		}
 	}
 }
